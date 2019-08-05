@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
  * This is a smart component with its viewportWidth property depending on the state in redux
  * This is a wrapper
  * This wrapper set the trigger(bool) property of the wrapped component in response to viewport width change
- * 
+ *  
  * parameters:
  * 	WrappedComponent
  * 	triggerPoint: only four strings allowed: 'sm'(576px), 'md'(768px), 'lg'(992px) and 'xl'(1200px)
