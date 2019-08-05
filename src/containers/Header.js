@@ -5,7 +5,7 @@ import Navigation from '../components/Header/ResponsiveCollapsibleNavigation'
 /**
  * This is a smart component (contains ResponsiveCollapsibleNavigation)
  * This is the Header of the website and user can set its brand 
- *  
+ *   
  * Build in style:
  *      it is fixed at the top of window 
  *      its width is styled as the full window-width
