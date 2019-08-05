@@ -6,7 +6,7 @@ import responsiveWrapper from '../_responsivePage/responsiveWrapper'
 
 /*
  * This is a smart component (contains smart component responsiveWrapper)
- *  
+ *   
  * This is the Navigation component wrapped with collapsibleWrapper and responsiveWrapper
  * it's collapsibility will be enabled at certain window width
  * 
