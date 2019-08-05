@@ -5,7 +5,7 @@ import profile from '../images/Profile.JPG'
 
 /** 
  * This is the home page
- *  
+ *   
  * Property:
  * 		display: centered block or inline-block
  */
