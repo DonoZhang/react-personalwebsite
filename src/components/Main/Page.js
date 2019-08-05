@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
  * It contains two parts:
  *      -div.page-header
  *      -div.page-content
- * 
+ *  
  */
 
 export default class Page extends Component{
