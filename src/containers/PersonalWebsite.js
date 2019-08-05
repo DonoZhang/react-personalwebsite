@@ -15,7 +15,7 @@ import toggleDisplayWrapper from '../components/_responsivePage/toggleDisplayWra
  * which is then used by responsiveWrapper.
  * With this design, only one window-resize listener is required no matter how many responsive elements 
  * are added to the whole website, which will improve app performance
- * 
+ *  
  */
 
 //data to initialize navigation and Route for router
