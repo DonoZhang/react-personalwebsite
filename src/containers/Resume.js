@@ -5,7 +5,7 @@ import Accordion from '../components/_collapse/Accordion'
 
 /** 
  * This is the Resume page
- * 
+ *  
  * Property:
  * 		display: centered block or inline-block
  */
