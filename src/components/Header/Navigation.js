@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 /**
  * This is a dumb component
  * It simply generates a set of Links wrapped in a nav tag with array data from the pagesData property
- * 
+ *  
  * properties:
  * 		  pagesData: an array of the path and name of pages 
  * 		  display: display navigation items as inline-block or block
