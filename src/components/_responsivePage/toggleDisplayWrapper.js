@@ -6,7 +6,7 @@ import responsiveWrapper from './responsiveWrapper'
  * This is a smart component(contains smart component responsiveWrapper) and a wrapper
  * This is an extension of the responsiveWrapper - 
  * it automatically toggles the wrappedComponent's display between block & auto-margin and inline-block & preset-margin when viewport width changes
- *  
+ *   
  * *Hint: It generally allows a component to start a new line and center itself when the viewport width is smaller than certain value 
  */
 
