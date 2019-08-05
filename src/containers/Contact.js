@@ -9,7 +9,7 @@ import { ReactComponent as Github } from '../images/github-brands.svg'
 
 /** 
  * This is the contact page
- *  
+ *   
  * Property:
  * 		display: centered block or inline-block
  * 
