@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import responsiveWrapper from './responsiveWrapper'
 
 /**
- * This is a smart component(contains smart component responsiveWrapper) and an advanced component(wrapper)
+ * This is a smart component(contains smart component responsiveWrapper) and a wrapper
  * This is an extension of the responsiveWrapper - 
  * it automatically toggles the wrappedComponent's display between block & auto-margin and inline-block & preset-margin when viewport width changes
  * 

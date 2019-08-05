@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import collapsibleWrapper from './collapsibleWrapper'
 
 /** 
- * This is a dumb(pure) component and an extend to the collapsibleWrapper (./collapsibleWrapper.js)
+ * This is a dumb(pure) component and an extended use of the collapsibleWrapper (./collapsibleWrapper.js)
  *
  * This component behaves like an accordion collapse component:
  * when user click one of the buttons, the according accordion item will show while the others will collapse automatically

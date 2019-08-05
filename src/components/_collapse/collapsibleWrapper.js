@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 /** 
- * This is a dumb(pure) component and an advanced component(wrapper)
+ * This is a dumb(pure) component and a wrapper
  *
  * This wrapper make the wrapped component collapsible by adding a button to it - 
  * user can toggle its display between collapse and show by clicking the button

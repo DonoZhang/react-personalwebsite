@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 	
 /*
  * This is a smart component with its viewportWidth property depending on the state in redux
- * This is an advanced component(wrapper)
+ * This is a wrapper
  * This wrapper set the trigger(bool) property of the wrapped component in response to viewport width change
  * 
  * parameters:
