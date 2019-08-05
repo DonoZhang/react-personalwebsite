@@ -18,7 +18,7 @@ const pagesData=[
 
 /** 
  * This is the main app container
- * 
+ *  
  * This component is also responsible of dispatching the viewportWidth state in redux, which is then used by responsiveWrapper.
  * With this design, only one window-resize listener is required no matter how many responsive elements are added to the whole website.
  * This will improve performance
