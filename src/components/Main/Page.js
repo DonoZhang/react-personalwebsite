@@ -11,16 +11,20 @@ import PropTypes from 'prop-types'
  */
 
 export default class Page extends Component{
-    static propTypes = {
-        children: PropTypes.array,
-        className: PropTypes.string
-    }
-    render(){
-        return (
-            <div className={`page ${this.props.className}`}>
-                <div className="page-header">{this.props.children[0]}</div>
-                <div className="page-content">{this.props.children[1]}</div>
-            </div>
-        )
-    }
+	static propTypes = {
+		children: PropTypes.array,
+		className: PropTypes.string
+	}
+	
+	render(){
+		return (
+			<div className={`page ${this.props.className}`}>
+				<div className="page-header">
+					{this.props.children[0]}
+				</div>
+				<div className="page-content">
+					{this.props.children[1]}
+				</div>
+			</div>)
+	}
 }

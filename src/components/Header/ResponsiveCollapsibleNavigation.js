@@ -18,12 +18,17 @@ const Collapse = collapsibleWrapper(Navigation)
 class CollapsibleNavigation extends Component{
   static propTypes = {
     trigger: PropTypes.bool
-  }
+	}
+	
 	render(){
 		return (
 			<div className='collapsible-navigation' style={{display: 'inline-block'}}>
-					<Collapse enabled={this.props.trigger} display={this.props.trigger?'block':'inline-block'} {...this.props}/>
-			</div>);
+					<Collapse 
+						enabled={this.props.trigger} 
+						display={this.props.trigger?'block':'inline-block'}
+						{...this.props}
+					/>
+			</div>)
 	}
 }
 

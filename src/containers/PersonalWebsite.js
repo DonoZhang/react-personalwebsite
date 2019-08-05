@@ -8,22 +8,38 @@ import Resume from './Resume'
 import Contact from './Contact'
 import toggleDisplayWrapper from '../components/_responsivePage/toggleDisplayWrapper'
 
-//data to initialize navigation and Route for router
-//*Note: toggleDisplayWrapper is used to make element layout responsive to viewport width (center and start a new line when smaller than 'lg')
-const pagesData=[
-	{navType: 'LINK', path: '/react-personalwebsite/', name: 'Home', component:  toggleDisplayWrapper(Home, 'lg', -1)},
-	{navType: 'LINK', path: '/react-personalwebsite/resume', name: 'Resume', component:  toggleDisplayWrapper(Resume, 'lg', -1)},
-	{navType: 'LINK', path: '/react-personalwebsite/contact', name: 'Contact', component:  toggleDisplayWrapper(Contact, 'lg', -1)}
-]
-
 /** 
  * This is the main app container
  *  
- * This component is also responsible of dispatching the viewportWidth state in redux, which is then used by responsiveWrapper.
- * With this design, only one window-resize listener is required no matter how many responsive elements are added to the whole website.
- * This will improve performance
+ * This component is also responsible of dispatching the viewportWidth state in redux, 
+ * which is then used by responsiveWrapper.
+ * With this design, only one window-resize listener is required no matter how many responsive elements 
+ * are added to the whole website, which will improve app performance
  * 
  */
+
+//data to initialize navigation and Route for router
+const pagesData=[
+	{
+		navType: 'LINK', 
+		path: '/react-personalwebsite/', 
+		name: 'Home', 
+		//center responsive elements and start a new line when viewport width is smaller than 'lg'
+		component: toggleDisplayWrapper(Home, 'lg', -1)
+	},
+	{
+		navType: 'LINK', 
+		path: '/react-personalwebsite/resume', 
+		name: 'Resume', 
+		component:  toggleDisplayWrapper(Resume, 'lg', -1)
+	},
+	{
+		navType: 'LINK', 
+		path: '/react-personalwebsite/contact', 
+		name: 'Contact', 
+		component:  toggleDisplayWrapper(Contact, 'lg', -1)
+	}
+]
 
 class PersonalWebsite extends Component{
 	static propTypes = {
@@ -46,15 +62,22 @@ class PersonalWebsite extends Component{
 
 	_createRoutes(pagesData){
 		const routes = []
-		pagesData.forEach((page, index)=>routes.push(<Route key={index} path={page.path} exact component={page.component}/>))
+		pagesData.forEach((page, index)=>{
+			routes.push(<Route key={index} path={page.path} exact component={page.component}/>)
+		})
 		return routes
 	}
 
 	render(){
-		return (<Router>
-							<Header brand='Dapeng Zhang' pagesData={pagesData}/>{/*pass 'pagesData' down to 'Navigation'*/}
-							{this._createRoutes(pagesData)}
-						</Router>);
+		return (
+			<Router>
+				<Header 
+					brand='Dapeng Zhang' 
+					//pass 'pagesData' down to 'Navigation'
+					pagesData={pagesData}
+				/>
+				{this._createRoutes(pagesData)}
+			</Router>)
 	}
 }
 

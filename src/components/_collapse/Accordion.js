@@ -35,23 +35,27 @@ class AccordionItem extends Component{
 	//make children property collapsible
 	_handleWrap = ()=>{
 		this.setState({children: this.props.children})
-		this.setState((prestate)=>{
+		this.setState((prestate)=>
+		{
 			class _CollapsibleComponent extends Component{
 				render(){
 					return(<div className='accordion-item'>{prestate.children}</div>)
 				}
 			}
+
 			_CollapsibleComponent = collapsibleWrapper(_CollapsibleComponent)
+
 			return {CollapsibleComponent: _CollapsibleComponent}
 		})
 	}
+
 	render(){
 		return (
 			<this.state.CollapsibleComponent
 				buttonName={this.props.buttonName}
 				btnDisplay={{width: '100%'}}
-				{...this.props}/>
-		)
+				{...this.props}
+			/>)
 	}
 }
 
@@ -64,7 +68,8 @@ export default class Accordion extends Component{
 	constructor(props){
 		super(props)
 		this.state={
-			activeItem: 0 //by default, the first item is shown when page is ready
+			//by default, the first item is shown when page is ready
+			activeItem: 0 
 		}
 	}
 
@@ -79,13 +84,17 @@ export default class Accordion extends Component{
 		let buttonName = ''
 		this.props.children.forEach((child, index)=>{
 			buttonName=this.props.buttonNames[index]?this.props.buttonNames[index]:''
-			accordion.push(<AccordionItem 
-								key={index} 
-								index={index} 
-								buttonName={buttonName} 
-								accordion={true/* enable accordion, now collapse is controled by the collapse property below*/}
-								onClickBtn={this._onClickBtn}
-								collapse={index!==this.state.activeItem/* only to show the active item*/}>{child}</AccordionItem>)
+			accordion.push(
+				<AccordionItem 
+					key={index} 
+					index={index} 
+					buttonName={buttonName} 
+					//enable accordion, now collapse is controled by the collapse property below
+					accordion={true}
+					onClickBtn={this._onClickBtn}
+					//only to show the active item
+					collapse={index!==this.state.activeItem}
+				>{child}</AccordionItem>)
 		})
 		return accordion
 	}
@@ -94,7 +103,6 @@ export default class Accordion extends Component{
 		return (
 			<div className='accordion'>
 				{this._getItems()}
-			</div>
-		)
+			</div>)
 	}
 }

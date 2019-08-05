@@ -11,18 +11,20 @@ import responsiveWrapper from './responsiveWrapper'
  */
 
 export default (WrappedComponent, triggerPoint, triggerDirection)=>{
-    class ToggleDisplayComponent extends Component{
-        static propTypes={
-            trigger: PropTypes.bool
-        }
-        _handleResponsive(trigger){
-            if(trigger) return {display: 'block', margin: 'auto'}
-            else return {display: 'inline-block'}
-        }
+	class ToggleDisplayComponent extends Component{
+		static propTypes={
+			trigger: PropTypes.bool
+		}
 
-        render(){
-            return <WrappedComponent display={this._handleResponsive(this.props.trigger)}/>
-        }
-    }
-    return responsiveWrapper(ToggleDisplayComponent, triggerPoint, triggerDirection)
+		_handleResponsive(trigger){
+			if(trigger) return {display: 'block', margin: 'auto'}
+			else return {display: 'inline-block'}
+		}
+
+		render(){
+			return <WrappedComponent display={this._handleResponsive(this.props.trigger)}/>
+		}
+	}
+
+	return responsiveWrapper(ToggleDisplayComponent, triggerPoint, triggerDirection)
 }

@@ -31,10 +31,15 @@ export default class Navigation extends Component{
 		pagesData.forEach((page, index)=>{
 			if(page.navType === 'LINK')
 				links.push(
-					<Link key={index} to={page.path} className='navigation-item' style={{display: this.props.display}}>{page.name}</Link>
+					<Link 
+						key={index} 
+						to={page.path} 
+						className='navigation-item' 
+						style={{display: this.props.display}}
+					>{page.name}</Link>
 				)
 		})
-		return links;
+		return links
 	}
 
 	// if using anchor rather than router:
@@ -43,16 +48,21 @@ export default class Navigation extends Component{
 	// 	pagesData.forEach((page, index)=>{
 	// 		if(page.navType === 'ANCHOR')
 	// 			anchors.push(
-	// 				<a key={index} href={page.path} className='navigation-item' style={{display: this.props.display}}>{page.name}</a>
+	// 				<a 
+	// 					key={index} 
+	// 					href={page.path} 
+	// 					className='navigation-item' 
+	// 					style={{display: this.props.display}}
+	// 				>{page.name}</a>
 	// 			)
 	// 	})
-	// 	return anchors;
+	// 	return anchors
 	// }
 
 	render(){
 		return (
 			<nav className="navigation">
 				{this._linksCreator(this.props.pagesData)}
-			</nav>);
+			</nav>)
 	}
 }

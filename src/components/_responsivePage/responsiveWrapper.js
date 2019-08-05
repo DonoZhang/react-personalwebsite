@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
  * This is a wrapper
  * This wrapper set the trigger(bool) property of the wrapped component in response to viewport width change
  *  
- * parameters:
+ * Parameters:
  * 	WrappedComponent
  * 	triggerPoint: only four strings allowed: 'sm'(576px), 'md'(768px), 'lg'(992px) and 'xl'(1200px)
  *  triggerDirection: 
@@ -42,13 +42,16 @@ export default (WrappedComponent, triggerPoint, triggerDirection)=>{
 			const viewportWidth = this.props.viewportWidth
 			const triggerWidth = this._getTriggerWidth(triggerPoint)
 			switch(true){
-				case triggerDirection === 0:{//trigger when viewportWidth is exactly the triggerPoint
+				case triggerDirection === 0:{
+					//trigger when viewportWidth is exactly the triggerPoint
 					return viewportWidth === triggerWidth
 				}
-				case triggerDirection > 0:{//trigger when viewportWidth is larger than triggerPoint 
+				case triggerDirection > 0:{
+					//trigger when viewportWidth is larger than triggerPoint 
 					return viewportWidth > triggerWidth
 				}
-				case triggerDirection < 0:{//trigger when viewportWidth is smaller than triggerPoint
+				case triggerDirection < 0:{
+					//trigger when viewportWidth is smaller than triggerPoint
 					return viewportWidth < triggerWidth
 				}
 				default:{
@@ -58,8 +61,7 @@ export default (WrappedComponent, triggerPoint, triggerDirection)=>{
 		}
 
 		render(){
-			return (
-			<WrappedComponent trigger = {this._getTrigger()} {...this.props}/>)
+			return <WrappedComponent trigger = {this._getTrigger()} {...this.props}/>
 		}
 	}
 

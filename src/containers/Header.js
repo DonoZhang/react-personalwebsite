@@ -14,18 +14,17 @@ import Navigation from '../components/Header/ResponsiveCollapsibleNavigation'
 
 
 export default class Header extends Component{
-    static propTypes = {
-        brand: PropTypes.string
-    }
-    render(){
-        return (
-            <div className="header-wrapper" 
-            style={{position: 'fixed',top: '0', width: '100vw'}}>
-                <div className="header">
-                    <h1 className="header-brand">{this.props.brand}</h1>
-                    <Navigation {...this.props}/>
-                </div>
-            </div>
-        );
-    }
+	static propTypes = {
+		brand: PropTypes.string
+	}
+
+	render(){
+		return (
+			<div className="header-wrapper" style={{position: 'fixed',top: '0', width: '100vw'}}>
+				<div className="header">
+					<h1 className="header-brand">{this.props.brand}</h1>
+					<Navigation {...this.props}/>
+				</div>
+			</div>)
+	}
 }
