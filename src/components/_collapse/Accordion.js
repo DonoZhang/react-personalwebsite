@@ -4,7 +4,7 @@ import collapsibleWrapper from './collapsibleWrapper'
 
 /** 
  * This is a dumb(pure) component and an extended use of the collapsibleWrapper (./collapsibleWrapper.js)
- *
+ * 
  * This component behaves like an accordion collapse component:
  * when user click one of the buttons, the according accordion item will show while the others will collapse automatically
  * It receives accordion items from its children property and the names of the buttons from the buttonNames property
