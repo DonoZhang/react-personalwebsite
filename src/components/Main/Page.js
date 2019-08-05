@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
  * This is a dumb component 
  * This is a simple template for pages
  * It contains two parts:
- *      -div.page-header
- *      -div.page-content
+ *   -div.page-header
+ *   -div.page-content
  *  
  */
 
@@ -15,7 +15,7 @@ export default class Page extends Component{
 		children: PropTypes.array,
 		className: PropTypes.string
 	}
-	
+
 	render(){
 		return (
 			<div className={`page ${this.props.className}`}>
