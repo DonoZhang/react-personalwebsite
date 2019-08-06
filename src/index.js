@@ -4,7 +4,7 @@ import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import PersonalWebsite from './containers/PersonalWebsite'
 import responsiveReducer from './reducers/responsive'
-import './index.css'
+import './index.scss'
 
 const store = createStore(responsiveReducer)
 
