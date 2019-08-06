@@ -36,11 +36,11 @@ export default class Resume extends Component{
 							<Accordion buttonNames={['Front-end', 'back-end']} collapse={false}>
 								<ul>
 									<li>
-										JavaScript
+										JavaScript (ES6, Vanilla)
 										<progress value='80' max='100'></progress>
 									</li>
 									<li>
-										CSS
+										CSS (SASS)
 										<progress value='80' max='100'></progress>
 									</li>
 									<li>
