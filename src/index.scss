@@ -1,0 +1,458 @@
+$themecolor: rgb(65,200,131);
+$body-background: rgb(52, 58, 64);
+$support-width: 1088px;
+
+//partially adjust styles at different device width
+@mixin respond-to($media){
+	@if $media == fullscreen{
+		@media only screen and (min-width: 1280px){
+			@content;
+		}
+	}
+
+	@if $media == smallscreen{
+		@media only screen and (max-width: 480px){ 
+			max-width:350px;
+		}
+
+		@media only screen and (max-width: 414px){
+			max-width:300px;
+		}
+
+		@media only screen and (max-width: 375px){
+			max-width:275px;
+		}
+
+		@media only screen and (max-width: 360px){
+			max-width:250px;
+		}
+	}
+}
+
+::-webkit-scrollbar{
+	width: 0;
+}
+
+a{
+	text-decoration: none;
+	color:$themecolor;
+
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+body{
+	margin:0;
+	font-family: Sans-serif;
+	background:$body-background;
+}
+
+.header-wrapper{
+	background: $themecolor;
+	box-shadow: 0 0 20px rgb(34, 37, 41);
+	z-index: 100;
+
+	@include respond-to(fullscreen){
+		background-color: $body-background;
+	}
+}
+
+.header{
+	max-width: $support-width;
+	margin: auto;
+	padding: 10px;
+	text-align: right;
+
+	.header-brand{
+		position: fixed;
+		margin: 10px 0;
+		color: whitesmoke;
+		font-weight: 500;
+		font-size: 25px;
+
+		@include respond-to(fullscreen){
+			color: $themecolor;
+		}
+	}
+
+	.collapse-button{
+		height: 40px;
+		width: 30px;
+		margin: 5px auto;
+		border:none;
+		outline: none;
+
+		background: url('./images/menu.png'){
+			size: cover;
+		}
+		cursor: pointer;
+	}
+
+	.navigation-item{
+		margin: 15px 25px 15px 0px;
+		color: rgb(211, 243, 235);
+		text-decoration: none;
+		font-weight: 400;
+
+		&:hover{
+			color: whitesmoke;
+		}
+
+		@include respond-to(fullscreen){
+			color: gainsboro;
+		}
+	}
+}
+
+//Page 入场动画
+@keyframes toShow{
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 500px, 0);
+	}
+	1% {
+		opacity: 0.5;
+	}
+	50%{
+		opacity: 1;
+		transform: translate3d(0, 0px, 0);
+	}
+	75% {
+		transform: translate3d(0, 10px, 0);
+	}
+	100%{
+		transform: translate3d(0, 0px, 0);
+	}
+}
+
+.page{
+	max-width: $support-width;
+	margin: 100px auto 30px auto;
+	overflow: hidden;
+	border-radius: 15px;
+	box-shadow: 0 0 20px rgb(34, 37, 41);
+	animation: toShow 0.7s ease-out;
+}
+
+.page-header{
+	background: {
+		color:  $themecolor;
+		image: url('./images/background.png');
+		size: 800px;
+		repeat: no-repeat;
+		clip: padding-box;
+		position: 200px;
+	}
+}
+
+.page-content{
+	background-color: white;
+}
+
+.page-header, 
+.page-content{
+	max-width: 100%;
+	padding: 40px;
+}
+
+.home {
+	.page-header{
+    padding-bottom: 0px;
+    white-space: nowrap;
+	}
+
+	.profile{
+    height: 250px;
+    width: 250px;
+    border: solid white;
+    box-shadow: 0 0 6px gray;
+    margin-left: 40px;
+    margin-right: 100px;
+    transform: translate(0px, 6px);
+    transition: {
+			duration: 0.2s;
+			timing-function: ease-out;
+		}
+		
+		&:hover{
+			transform: translate(0px, 2px);
+			transition: transform 0.2s ease-out;
+		}
+	}
+
+	.header-content{
+    vertical-align: top;
+    text-align: center;
+    white-space: normal;
+		margin-top: 30px;
+		
+		p{
+			margin: 0;
+			padding: 30px 0px;
+		}
+	}
+
+	.name{
+		color: white;
+		font-size: 60px;
+		font-weight: 550;
+		padding-bottom: 15px;
+	}
+
+	.position{
+		color: white;
+		font-size: 20px;
+		padding-top: 15px;
+	}
+	
+	.summary{
+		width:450px;
+		text-align: justify;
+		white-space: normal;
+		vertical-align: text-bottom;
+		margin-left: 30px;
+	}
+
+	h2{
+		font-size: 30px;
+
+		margin: {
+			bottom:30px;
+			top: 0px;
+		}
+	}
+
+	span{
+		color: $themecolor;
+	}
+
+	.information{
+		text-align: left;
+		white-space: nowrap;
+		overflow-x: scroll;
+	}
+
+	table{
+		width: 450px;
+		margin-left: 50px;
+		line-height: 22px;
+	}
+
+	th{
+		font-weight: 400;
+	}
+
+	td{
+		color:rgb(152,152,152);
+		font-weight: 350;
+	}
+}
+
+.resume, 
+.contact{
+	.page-header{
+		color: white;   
+    text-align: center;
+	}
+
+	h1{
+		font-size: 50px;
+    font-weight: normal;
+	}
+}
+
+.row{
+	white-space: nowrap;
+
+	&>div{
+		min-height: 350px;
+		width: 450px;
+		margin: 10px 20px;
+	}
+}
+
+.resume{
+	h2{
+    text-align: center;
+	}
+
+	ul{
+    line-height: 30px;
+    font-size: 14px;
+    white-space: normal;
+	}
+
+	.technical-skills{
+    margin-left: 20px;
+    vertical-align: top;
+	}
+
+	.collapse-button{
+    font-size: 20px;
+    background: $themecolor;
+    color: white;
+    padding: 10px 0px;
+    outline: none;
+    border:none;
+		cursor: pointer;
+		
+		&:hover{
+			background: rgb(21, 127, 251)
+		}
+	}
+
+	.collapse{
+		padding: 0 30px;
+		
+		ul{
+			line-height: 30px;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	li{
+		position: relative;
+	}
+
+	progress{
+		width: 200px;
+		position: absolute;
+		top: 5px;
+		right:0;
+
+		@media only screen and (max-width: 480px){
+			display: none;
+		}
+	}
+}
+
+
+.timeline{
+	border-left: 4px solid rgb(224, 224, 224);
+}
+
+.timeline-item{
+	position: relative;
+	border-left: 2px solid rgb(57, 201, 129);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+	margin: 10px 20px;
+	padding: 10px 20px;
+	white-space: normal;
+	
+	&::before, 
+	&::after{
+		content:"";
+		display: block;
+		position: absolute;
+	}
+
+	&::before{
+		width: 12px;
+		height: 12px;
+		left: -32px;
+		top:20px;
+
+		border: 2px solid $themecolor{
+			radius: 50%;
+		};
+	}
+
+	&::after{
+    width: 16px;
+		height: 0px;
+		left: -18px;
+    top:27px;
+    border: 1px solid $themecolor;
+	}
+
+	p{
+		margin: 0;
+
+		&:first-child{
+			font-weight: bold;
+			margin-bottom: 0;
+		}
+
+		&:nth-child(2){
+			font-size: 12px;
+			font-style: oblique;
+			padding: 5px 0;
+			color: gray;
+		}
+
+		&:last-child{
+			font-size: 14px;
+		}
+	}
+}
+
+.contact{
+	.page-content{
+    padding-bottom: 10px;
+	}
+
+	.contact-form{
+		max-width: 350px;
+		margin-right: 100px;
+	}
+
+	input, 
+	textarea{
+		width: 100%;
+    font-size: 16px;
+    line-height: 40px;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding-left: 10px;
+    border: 1px solid gray;
+	}
+
+	textarea{
+    resize: vertical;
+    min-height: 120px;
+	}
+
+	button{
+    background: rgb(21, 127, 251);
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+	} 
+
+	.information{
+    vertical-align: top;
+    overflow-x: scroll;
+	}
+
+	p{
+    width: 350px;
+		margin: 25px auto;
+		
+		svg{
+			width: 16px;
+			height: auto;
+			vertical-align: middle;
+			color: $themecolor;
+		}
+
+		span{
+			font-size: 15px;
+			font-weight: 300;
+			padding-left: 30px;
+		}
+	}
+}
+
+.summary, 
+.information, 
+.technical-skills, 
+.professional-experience, 
+.education, 
+.contact-form{
+	@include respond-to(smallscreen)
+}
