@@ -51,6 +51,7 @@ export default class Contact extends Component{
 		if(!reg.test(email)) return alert('Please enter a valid email address')
 		
 		//code to send email
+		return alert('Need back-end support to send message')
 	}
 
 	render(){
